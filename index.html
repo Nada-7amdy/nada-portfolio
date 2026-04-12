@@ -1,81 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nada Hamdy | Portfolio</title>
+    <title>Nada - Cybersecurity & Creative Developer</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-    <header>
-        <h1>Nada Hamdy Abdelwahab</h1>
-        <p>Computer Science Student | Secure Web Development Enthusiast</p>
-    </header>
+    <!-- 3D Background Placeholder -->
+    <div id="canvas-container"></div>
 
-    <section class="about">
-        <h2>About Me</h2>
-        <p>
-            I am a Computer Science student at the Arab Open University with a strong interest in
-            secure web development and modern web technologies.
-            I am continuously developing my skills through academic projects, hackathons,
-            and self-learning to meet professional standards.
-        </p>
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="logo">NADA_OS<span>_</span></div>
+        <ul class="nav-links">
+            <li><a href="#hero">// System.Init</a></li>
+            <li><a href="#skills">// Skills</a></li>
+            <li><a href="#projects">// Showcase</a></li>
+            <li><a href="#contact">// Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hidden">
+        <div class="hero-content">
+            <p class="subtitle">Welcome to the Mainframe</p>
+            <h1 class="glitch" data-text="Software Engineer & Digital Artist">Software Engineer &<br><span class="highlight">Digital Artist</span></h1>
+            <p class="description">Bridging the gap between secure architecture and stunning visuals. Cybersecurity student & Creative Developer.</p>
+            <div class="hero-actions">
+                <a href="#projects" class="cyber-btn primary">Explore_Matrix</a>
+                <a href="#contact" class="cyber-btn secondary">Ping_Me</a>
+            </div>
+        </div>
     </section>
 
-    <section class="skills">
-        <h2>Skills</h2>
-        <div class="skills-container">
-            <div>
-                <h3>Technical Skills</h3>
-                <ul>
-                    <li>Web Development Fundamentals</li>
-                    <li>Secure Web Concepts</li>
-                    <li>Git & GitHub</li>
-                    <li>Microsoft Word & Excel</li>
-                    <li>Professional Presentations</li>
+    <!-- Skills Matrix Section -->
+    <section id="skills" class="hidden">
+        <h2 class="section-title">01. Skills_Matrix</h2>
+        <div class="skills-grid">
+            <div class="skill-category glass-card">
+                <h3><span class="icon">🔒</span> Security & Code</h3>
+                <ul class="skill-list">
+                    <li><span class="bar" style="width: 90%;"></span><span class="label">Web Development</span></li>
+                    <li><span class="bar" style="width: 85%;"></span><span class="label">Cybersecurity</span></li>
+                    <li><span class="bar" style="width: 80%;"></span><span class="label">C++</span></li>
+                    <li><span class="bar" style="width: 75%;"></span><span class="label">Java</span></li>
                 </ul>
             </div>
-
-            <div>
-                <h3>Soft Skills</h3>
-                <ul>
-                    <li>Time Management</li>
-                    <li>Effective Communication</li>
-                    <li>Teamwork</li>
-                    <li>Problem Solving</li>
+            <div class="skill-category glass-card">
+                <h3><span class="icon">🎨</span> Creative & Design</h3>
+                <ul class="skill-list">
+                    <li><span class="bar" style="width: 95%;"></span><span class="label">UI/UX Design</span></li>
+                    <li><span class="bar" style="width: 88%;"></span><span class="label">Graphic Design</span></li>
+                    <li><span class="bar" style="width: 80%;"></span><span class="label">Video Editing</span></li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <section class="projects">
-        <h2>Projects</h2>
-        <div class="project-card">
-            <h3>AI Project – University Hackathon</h3>
-            <p>
-                Collaborated with a team to develop an AI-based solution as part of a university hackathon.
-                Applied analytical thinking, teamwork, and time management skills under deadlines.
-            </p>
+    <!-- Projects Showcase Section -->
+    <section id="projects" class="hidden">
+        <h2 class="section-title">02. Executable_Files</h2>
+        <div class="projects-grid">
+            <!-- Project 1: Hyper El Masri Rebranding -->
+            <div class="project-card glass-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3>Hyper El Masri Rebranding</h3>
+                    <p>Complete brand identity redesign, including logo creation, social media covers, and visual assets for a commercial market.</p>
+                    <div class="tags">
+                        <span class="tag">Graphic Design</span>
+                        <span class="tag">Branding</span>
+                        <span class="tag">Illustrator</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2: Nada.AI Content Platform -->
+            <div class="project-card glass-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3>Nada.AI Content Platform</h3>
+                    <p>Establishing a tech-focused content brand. Creating high-quality visual identities, editing dynamic videos, and simplifying AI concepts.</p>
+                    <div class="tags">
+                        <span class="tag">Video Editing</span>
+                        <span class="tag">UI/UX</span>
+                        <span class="tag">Content Creation</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 3: AI Hackathon Project -->
+            <div class="project-card glass-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3>AI Hackathon Project</h3>
+                    <p>Collaborated with a team to develop an AI-based solution during a competitive hackathon, focusing on problem-solving and logic building.</p>
+                    <div class="tags">
+                        <span class="tag">AI</span>
+                        <span class="tag">Problem Solving</span>
+                        <span class="tag">C++ / Java</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="contact">
-        <h2>Contact</h2>
-        <p>Email: nadaeelmasry@gmail.com</p>
-        <p>
-            <a href="https://www.linkedin.com/in/nada-7amdy" target="_blank">LinkedIn</a> |
-            <a href="https://github.com/Nada-7amdy" target="_blank">GitHub</a>
-        </p>
+    <!-- Terminal Contact Section -->
+    <section id="contact" class="hidden">
+        <h2 class="section-title">03. Establish_Connection</h2>
+        <div class="terminal-container">
+            <div class="terminal-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="terminal-title">bash - root@nada-os:~</span>
+            </div>
+            <div class="terminal-body">
+                <p class="sys-msg">Initiating secure connection...</p>
+                <form id="contact-form">
+                    <div class="input-line">
+                        <span class="prompt">root@nada-os:~$</span>
+                        <input type="text" placeholder="Enter your Name" required>
+                    </div>
+                    <div class="input-line">
+                        <span class="prompt">root@nada-os:~$</span>
+                        <input type="email" placeholder="Enter your Email" required>
+                    </div>
+                    <div class="input-line">
+                        <span class="prompt">root@nada-os:~$</span>
+                        <textarea placeholder="Enter your Message..." rows="3" required></textarea>
+                    </div>
+                    <div class="input-line submit-line">
+                        <span class="prompt">root@nada-os:~$</span>
+                        <button type="submit" class="terminal-btn">./send_message.sh</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </section>
-
-    <footer>
-        <p>© 2026 Nada Hamdy. All Rights Reserved.</p>
-    </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>
