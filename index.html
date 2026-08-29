@@ -3,143 +3,311 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nada - Cybersecurity & Creative Developer</title>
+    <title>Nada Hamdy | AI Solutions Engineer & Intelligent Systems Architect</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts for Typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Google Fonts for Modern Engineering Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Orbitron:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- 3D Background Placeholder -->
-    <div id="canvas-container"></div>
+    <!-- Ambient Glow Background -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
 
     <!-- Navigation -->
     <nav class="glass-nav">
-        <div class="logo">NADA_OS<span>_</span></div>
+        <div class="logo">
+            <span class="logo-bracket">&lt;</span>NADA_AI<span class="logo-bracket">/&gt;</span>
+        </div>
         <ul class="nav-links">
-            <li><a href="#hero">// System.Init</a></li>
-            <li><a href="#skills">// Skills</a></li>
-            <li><a href="#projects">// Showcase</a></li>
-            <li><a href="#contact">// Contact</a></li>
+            <li><a href="#hero">// Core.Init</a></li>
+            <li><a href="#skills">// Capabilities</a></li>
+            <li><a href="#projects">// Case_Studies</a></li>
+            <li><a href="#services">// Offerings</a></li>
+            <li><a href="#contact">// Connect</a></li>
         </ul>
+        <a href="#contact" class="nav-cta cyber-btn-sm">Hire Specialist</a>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="hidden">
+    <section id="hero" class="hero-section hidden">
         <div class="hero-content">
-            <p class="subtitle">Welcome to the Mainframe</p>
-            <h1 class="glitch" data-text="Software Engineer & Digital Artist">Software Engineer &<br><span class="highlight">Digital Artist</span></h1>
-            <p class="description">Bridging the gap between secure architecture and stunning visuals. Cybersecurity student & Creative Developer.</p>
+            <div class="status-badge">
+                <span class="pulse-dot"></span> Available for High-Impact Contracts & AI Automation
+            </div>
+            <p class="subtitle">// AI & Software Solutions Architect</p>
+            <h1 class="glitch" data-text="Engineering Intelligent Systems & Automated Workflows">
+                Engineering <span class="highlight">Intelligent Systems</span> & Automated Workflows
+            </h1>
+            <p class="description">
+                I help enterprises, startups, and academic institutions eliminate operational bottlenecks through 
+                <strong>Grounded AI Assistants (RAG)</strong>, <strong>Enterprise Workflow Automation</strong>, and <strong>Interactive Technical Courseware</strong>.
+            </p>
+            <div class="hero-metrics">
+                <div class="metric-item">
+                    <span class="metric-num">90%+</span>
+                    <span class="metric-label">Manual Effort Eliminated</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-num">2nd</span>
+                    <span class="metric-label">University Innovation Award</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-num">100%</span>
+                    <span class="metric-label">Grounded AI Accuracy</span>
+                </div>
+            </div>
             <div class="hero-actions">
-                <a href="#projects" class="cyber-btn primary">Explore_Matrix</a>
-                <a href="#contact" class="cyber-btn secondary">Ping_Me</a>
+                <a href="#projects" class="cyber-btn primary">View Case Studies</a>
+                <a href="#contact" class="cyber-btn secondary">Discuss a Project</a>
             </div>
         </div>
     </section>
 
-    <!-- Skills Matrix Section -->
+    <!-- Capabilities Matrix Section -->
     <section id="skills" class="hidden">
-        <h2 class="section-title">01. Skills_Matrix</h2>
+        <div class="section-header">
+            <span class="section-tag">// Core Competencies</span>
+            <h2 class="section-title">01. Technical Architecture & Stack</h2>
+        </div>
         <div class="skills-grid">
             <div class="skill-category glass-card">
-                <h3><span class="icon">🔒</span> Security & Code</h3>
-                <ul class="skill-list">
-                    <li><span class="bar" style="width: 90%;"></span><span class="label">Web Development</span></li>
-                    <li><span class="bar" style="width: 85%;"></span><span class="label">Cybersecurity</span></li>
-                    <li><span class="bar" style="width: 80%;"></span><span class="label">C++</span></li>
-                    <li><span class="bar" style="width: 75%;"></span><span class="label">Java</span></li>
-                </ul>
+                <div class="card-icon">🤖</div>
+                <h3>AI & Intelligent Systems</h3>
+                <p class="card-desc">Designing robust, production-grade LLM applications with zero hallucination.</p>
+                <div class="skill-tags">
+                    <span class="skill-pill">RAG Knowledge Retrieval</span>
+                    <span class="skill-pill">Custom AI Agents</span>
+                    <span class="skill-pill">Prompt Engineering</span>
+                    <span class="skill-pill">Gemini & OpenAI SDKs</span>
+                    <span class="skill-pill">Vector Embeddings</span>
+                </div>
             </div>
+
             <div class="skill-category glass-card">
-                <h3><span class="icon">🎨</span> Creative & Design</h3>
-                <ul class="skill-list">
-                    <li><span class="bar" style="width: 95%;"></span><span class="label">UI/UX Design</span></li>
-                    <li><span class="bar" style="width: 88%;"></span><span class="label">Graphic Design</span></li>
-                    <li><span class="bar" style="width: 80%;"></span><span class="label">Video Editing</span></li>
-                </ul>
+                <div class="card-icon">⚡</div>
+                <h3>Python & Workflow Automation</h3>
+                <p class="card-desc">End-to-end automation pipelines that connect business tools seamlessly.</p>
+                <div class="skill-tags">
+                    <span class="skill-pill">Python (FastAPI / Flask)</span>
+                    <span class="skill-pill">Google Workspace / Cloud APIs</span>
+                    <span class="skill-pill">n8n / Make Integration</span>
+                    <span class="skill-pill">Data Pipelines & ETL</span>
+                    <span class="skill-pill">Dynamic PDF / HTML Generation</span>
+                </div>
+            </div>
+
+            <div class="skill-category glass-card">
+                <div class="card-icon">🎓</div>
+                <h3>EdTech & Technical Courseware</h3>
+                <p class="card-desc">Engineering hands-on, high-engagement curricula and interactive learning suites.</p>
+                <div class="skill-tags">
+                    <span class="skill-pill">Curriculum Architecture</span>
+                    <span class="skill-pill">Interactive Learning Labs</span>
+                    <span class="skill-pill">CS & AI Pedagogy</span>
+                    <span class="skill-pill">Cybersecurity Simulations</span>
+                    <span class="skill-pill">Technical Documentation</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Showcase Section -->
+    <!-- Case Studies Section -->
     <section id="projects" class="hidden">
-        <h2 class="section-title">02. Executable_Files</h2>
+        <div class="section-header">
+            <span class="section-tag">// Proven Deliverables</span>
+            <h2 class="section-title">02. Featured Case Studies</h2>
+        </div>
         <div class="projects-grid">
-            <!-- Project 1: Hyper El Masri Rebranding -->
-            <div class="project-card glass-card">
-                <div class="project-img"></div>
+
+            <!-- Case Study 1: UniMind -->
+            <div class="project-card glass-card featured">
+                <div class="project-header">
+                    <span class="badge-award">🏆 2nd Place Innovation Award</span>
+                    <span class="project-domain">Conversational AI / RAG</span>
+                </div>
                 <div class="project-info">
-                    <h3>Hyper El Masri Rebranding</h3>
-                    <p>Complete brand identity redesign, including logo creation, social media covers, and visual assets for a commercial market.</p>
+                    <h3>UniMind — Intelligent Academic Knowledge Assistant</h3>
+                    <p class="project-problem">
+                        <strong>The Challenge:</strong> Campus communities suffer from fragmented course syllabi, administrative FAQs, and scheduling bottlenecks, overwhelming support staff.
+                    </p>
+                    <p class="project-solution">
+                        <strong>The Solution:</strong> Engineered a domain-specific conversational AI system with strict semantic retrieval and knowledge grounding, delivering 100% verified answers without hallucinations.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="p-metric">
+                            <span class="p-val">&lt; 500ms</span>
+                            <span class="p-lbl">Query Latency</span>
+                        </div>
+                        <div class="p-metric">
+                            <span class="p-val">24/7</span>
+                            <span class="p-lbl">Automated Support</span>
+                        </div>
+                    </div>
                     <div class="tags">
-                        <span class="tag">Graphic Design</span>
-                        <span class="tag">Branding</span>
-                        <span class="tag">Illustrator</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">RAG Architecture</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">LLM Grounding</span>
+                        <span class="tag">NLP</span>
                     </div>
                 </div>
             </div>
-            <!-- Project 2: Nada.AI Content Platform -->
+
+            <!-- Case Study 2: Document & Workflow Automation -->
             <div class="project-card glass-card">
-                <div class="project-img"></div>
+                <div class="project-header">
+                    <span class="badge-tech">Enterprise Workflow</span>
+                    <span class="project-domain">Data-to-Document</span>
+                </div>
                 <div class="project-info">
-                    <h3>Nada.AI Content Platform</h3>
-                    <p>Establishing a tech-focused content brand. Creating high-quality visual identities, editing dynamic videos, and simplifying AI concepts.</p>
+                    <h3>Automated Data-to-Document Reporting Engine</h3>
+                    <p class="project-problem">
+                        <strong>The Challenge:</strong> Businesses waste 10+ hours per week manually extracting spreadsheet data into customized reports and PDF deliverables.
+                    </p>
+                    <p class="project-solution">
+                        <strong>The Solution:</strong> Developed an automated Python pipeline integrating Google Forms, Sheets API, and a custom HTML/PDF renderer to generate personalized branded assets in seconds.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="p-metric">
+                            <span class="p-val">90%</span>
+                            <span class="p-lbl">Time Saved</span>
+                        </div>
+                        <div class="p-metric">
+                            <span class="p-val">100%</span>
+                            <span class="p-lbl">Error Elimination</span>
+                        </div>
+                    </div>
                     <div class="tags">
-                        <span class="tag">Video Editing</span>
-                        <span class="tag">UI/UX</span>
-                        <span class="tag">Content Creation</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Google Cloud / Workspace</span>
+                        <span class="tag">PDF Engine</span>
+                        <span class="tag">Automation</span>
                     </div>
                 </div>
             </div>
-            <!-- Project 3: AI Hackathon Project -->
+
+            <!-- Case Study 3: EdTech Suite -->
             <div class="project-card glass-card">
-                <div class="project-img"></div>
+                <div class="project-header">
+                    <span class="badge-tech">Curriculum Engineering</span>
+                    <span class="project-domain">EdTech Suite</span>
+                </div>
                 <div class="project-info">
-                    <h3>AI Hackathon Project</h3>
-                    <p>Collaborated with a team to develop an AI-based solution during a competitive hackathon, focusing on problem-solving and logic building.</p>
+                    <h3>Interactive AI & CS Curriculum & Interactive Labs</h3>
+                    <p class="project-problem">
+                        <strong>The Challenge:</strong> Traditional computer science curricula are overly theoretical, lacking hands-on engagement for modern students.
+                    </p>
+                    <p class="project-solution">
+                        <strong>The Solution:</strong> Architected a comprehensive educational curriculum featuring interactive web simulations, live coding modules, and cybersecurity protection suites.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="p-metric">
+                            <span class="p-val">500+</span>
+                            <span class="p-lbl">Active Students</span>
+                        </div>
+                        <div class="p-metric">
+                            <span class="p-val">95%</span>
+                            <span class="p-lbl">Engagement Rate</span>
+                        </div>
+                    </div>
                     <div class="tags">
-                        <span class="tag">AI</span>
-                        <span class="tag">Problem Solving</span>
-                        <span class="tag">C++ / Java</span>
+                        <span class="tag">Instructional Design</span>
+                        <span class="tag">Interactive Web</span>
+                        <span class="tag">AI Curriculum</span>
+                        <span class="tag">Pedagogy</span>
                     </div>
                 </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Services / How I Help Section -->
+    <section id="services" class="hidden">
+        <div class="section-header">
+            <span class="section-tag">// Engagement Models</span>
+            <h2 class="section-title">03. High-Value Services</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card glass-card">
+                <div class="service-num">01</div>
+                <h3>Custom AI Knowledge Bots</h3>
+                <p>AI assistants trained strictly on your internal documents, FAQs, and APIs with zero hallucination guarantee.</p>
+                <ul class="service-features">
+                    <li>✓ Secure Document Ingestion</li>
+                    <li>✓ Custom UI & Webhook Integrations</li>
+                    <li>✓ Audit Trail & Latency Optimization</li>
+                </ul>
+            </div>
+
+            <div class="service-card glass-card">
+                <div class="service-num">02</div>
+                <h3>Business Workflow Automation</h3>
+                <p>Connecting your existing software (Google Sheets, CRMs, WhatsApp, APIs) to execute tasks automatically.</p>
+                <ul class="service-features">
+                    <li>✓ Automated Document & PDF Generation</li>
+                    <li>✓ Real-Time Lead Processing & Alerts</li>
+                    <li>✓ Scalable Python Cloud Workflows</li>
+                </ul>
+            </div>
+
+            <div class="service-card glass-card">
+                <div class="service-num">03</div>
+                <h3>Technical Curriculum Design</h3>
+                <p>Turnkey courseware, slide systems, and interactive coding labs for educational academies and bootcamps.</p>
+                <ul class="service-features">
+                    <li>✓ Hands-on Python & AI Syllabi</li>
+                    <li>✓ Interactive Visual Web Demonstrations</li>
+                    <li>✓ Student Assessment & Quiz Engines</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <!-- Terminal Contact Section -->
     <section id="contact" class="hidden">
-        <h2 class="section-title">03. Establish_Connection</h2>
+        <div class="section-header">
+            <span class="section-tag">// Direct Communication</span>
+            <h2 class="section-title">04. Initiate Collaboration</h2>
+        </div>
         <div class="terminal-container">
             <div class="terminal-header">
                 <span class="dot red"></span>
                 <span class="dot yellow"></span>
                 <span class="dot green"></span>
-                <span class="terminal-title">bash - root@nada-os:~</span>
+                <span class="terminal-title">bash - nada@solutions-engine:~</span>
             </div>
             <div class="terminal-body">
-                <p class="sys-msg">Initiating secure connection...</p>
+                <p class="sys-msg">// Ready to discuss your project scope, architecture, or workflow automation.</p>
                 <form id="contact-form">
                     <div class="input-line">
-                        <span class="prompt">root@nada-os:~$</span>
-                        <input type="text" placeholder="Enter your Name" required>
+                        <span class="prompt">client@origin:~$</span>
+                        <input type="text" id="client-name" placeholder="Your Name / Organization" required>
                     </div>
                     <div class="input-line">
-                        <span class="prompt">root@nada-os:~$</span>
-                        <input type="email" placeholder="Enter your Email" required>
+                        <span class="prompt">client@origin:~$</span>
+                        <input type="email" id="client-email" placeholder="Your Work Email" required>
                     </div>
                     <div class="input-line">
-                        <span class="prompt">root@nada-os:~$</span>
-                        <textarea placeholder="Enter your Message..." rows="3" required></textarea>
+                        <span class="prompt">client@origin:~$</span>
+                        <textarea id="client-message" placeholder="Describe your project, bottleneck, or timeline..." rows="3" required></textarea>
                     </div>
                     <div class="input-line submit-line">
-                        <span class="prompt">root@nada-os:~$</span>
-                        <button type="submit" class="terminal-btn">./send_message.sh</button>
+                        <span class="prompt">client@origin:~$</span>
+                        <button type="submit" class="terminal-btn">./execute_inquiry.sh</button>
                     </div>
                 </form>
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Nada Hamdy. Engineered for high performance, reliability, and business impact.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
