@@ -63,28 +63,53 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Contact form: prepares an email in the visitor's configured mail application.
+// Contact form: sends payload directly to Nada's Gmail via FormSubmit API
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         const clientName = document.getElementById('client-name').value.trim();
         const clientEmail = document.getElementById('client-email').value.trim();
         const clientMessage = document.getElementById('client-message').value.trim();
         const sysMsg = document.querySelector('.sys-msg');
+        const submitBtn = contactForm.querySelector('.terminal-btn');
 
-        const subject = `Portfolio inquiry from ${clientName}`;
-        const body = [
-            `Name: ${clientName}`,
-            `Email: ${clientEmail}`,
-            '',
-            'Project details:',
-            clientMessage
-        ].join('\n');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Transmitting...';
+        sysMsg.textContent = '// Transmitting inquiry directly to Nada\'s inbox...';
+        sysMsg.style.color = '#ffd700';
 
-        window.location.href = `mailto:nada11eelmasry@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        sysMsg.textContent = 'Your email app is opening—please send the prepared message to complete your inquiry.';
-        sysMsg.style.color = '#27c93f';
+        try {
+            const response = await fetch('https://formsubmit.co/ajax/nada11eelmasry@gmail.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: clientName,
+                    email: clientEmail,
+                    message: clientMessage,
+                    _subject: `⚡ New Inquiry from ${clientName} (nadaelmasry.me)`
+                })
+            });
+
+            if (response.ok) {
+                sysMsg.textContent = `[✓] Inquiry received & delivered directly to Nada's inbox. Expect a response within 24h.`;
+                sysMsg.style.color = '#27c93f';
+                contactForm.reset();
+            } else {
+                throw new Error('Transmission failed');
+            }
+        } catch (error) {
+            // Graceful fallback to mail client
+            window.location.href = `mailto:nada11eelmasry@gmail.com?subject=${encodeURIComponent('Inquiry from ' + clientName)}&body=${encodeURIComponent(clientMessage)}`;
+            sysMsg.textContent = '[!] Fallback: Opening mail application...';
+            sysMsg.style.color = '#ffaa00';
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = './execute_inquiry.sh';
+        }
     });
 }
 
