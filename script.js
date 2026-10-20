@@ -63,6 +63,114 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Dynamic Metric Counter Animation (Runs when scrolled into view)
+let metricsAnimated = false;
+const heroMetrics = document.querySelector('.hero-metrics');
+
+function runMetricCounters() {
+    if (metricsAnimated) return;
+    metricsAnimated = true;
+
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'), 10);
+        const prefix = counter.getAttribute('data-prefix') || '';
+        const suffix = counter.getAttribute('data-suffix') || '';
+        const duration = 1600; // ms
+        const startTime = performance.now();
+
+        function updateCount(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Ease-out cubic curve for natural decelerating count
+            const easeProgress = 1 - Math.pow(1 - progress, 3);
+            const currentVal = Math.floor(easeProgress * target);
+
+            counter.textContent = `${prefix}${currentVal}${suffix}`;
+
+            if (progress < 1) {
+                requestAnimationFrame(updateCount);
+            } else {
+                counter.textContent = `${prefix}${target}${suffix}`;
+            }
+        }
+        requestAnimationFrame(updateCount);
+    });
+}
+
+if (heroMetrics) {
+    const metricObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                runMetricCounters();
+                metricObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.25 });
+    metricObserver.observe(heroMetrics);
+}
+
+// Interactive Diagnostic Terminal Shell
+const termChips = document.querySelectorAll('.term-chip');
+const termOutput = document.getElementById('term-output');
+
+const terminalData = {
+    system_info: [
+        { text: '[nada@nadaelmasry.me ~]$ ./system_info.sh', isCmd: true },
+        { text: '> OS Core: Nada-OS v2.6 [Intelligent Architecture Engine]' },
+        { text: '> Primary Stack: Python (FastAPI), RAG Systems, Gemini & OpenAI APIs, Cloud Workflows' },
+        { text: '> Secondary Impact: 500+ Egyptian Secondary Students Mentored (Grade 10 & 11)' },
+        { text: '> Security Rigor: OWASP Compliant, Strict Semantic Grounding, Anti-Hallucination' },
+        { text: '> Operational State: 🟢 ONLINE & Available for High-Impact Contracts & Advisory', isHighlight: true }
+    ],
+    awards: [
+        { text: '[nada@nadaelmasry.me ~]$ ./view_awards.sh', isCmd: true },
+        { text: '🏆 2nd Place University Innovation Award — UniMind (Academic RAG Assistant)', isHighlight: true },
+        { text: '🎖️ National Telecommunication Institute (NTI) — Machine Learning & Cloud Track' },
+        { text: '🎓 Arab Open University (AOU) — Cybersecurity & Systems Architecture Foundations' }
+    ],
+    curriculum: [
+        { text: '[nada@nadaelmasry.me ~]$ ./curriculum.sh', isCmd: true },
+        { text: '📚 Egyptian Secondary Curriculum (مادة البرمجة والذكاء الاصطناعي 2025/2026):' },
+        { text: '   ├─ Grade 10: Digital Survival Guide & Cyber Identity Shield (دليل البقاء الرقمي)' },
+        { text: '   ├─ Grade 11: Innovator IP Armor & Generative AI Ethics (الملكية الفكرية والأخلاقيات)' },
+        { text: '   └─ EdTech Automation: Python Assessment & Automated Certificate Engine', isHighlight: true }
+    ]
+};
+
+if (termChips && termOutput) {
+    termChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+            const cmd = chip.getAttribute('data-cmd');
+
+            if (cmd === 'clear') {
+                termOutput.classList.remove('active');
+                termOutput.innerHTML = '';
+                return;
+            }
+
+            const lines = terminalData[cmd];
+            if (!lines) return;
+
+            termOutput.innerHTML = '';
+            termOutput.classList.add('active');
+
+            lines.forEach(line => {
+                const p = document.createElement('p');
+                if (line.isCmd) {
+                    p.className = 'term-line-cmd';
+                } else if (line.isHighlight) {
+                    p.className = 'term-line-res highlight';
+                } else {
+                    p.className = 'term-line-res';
+                }
+                p.textContent = line.text;
+                termOutput.appendChild(p);
+            });
+        });
+    });
+}
+
 // Contact form: sends payload directly to Nada's Gmail with Anti-Spam & Anti-Harassment Shield
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
@@ -151,9 +259,11 @@ if (contactForm) {
                 throw new Error('Transmission failed');
             }
         } catch (error) {
-            // Fallback to secure mailto
-            window.location.href = `mailto:nada11eelmasry@gmail.com?subject=${encodeURIComponent('Inquiry from ' + clientName)}&body=${encodeURIComponent(clientMessage)}`;
-            sysMsg.textContent = '[!] Fallback: Opening local mail client...';
+            // Obfuscated fallback - builds address dynamically to prevent bot scraping
+            const u = atob('bmFkYTExZWVsbWFzcnk=');
+            const d = atob('Z21haWwuY29t');
+            window.location.href = `mailto:${u}@${d}?subject=${encodeURIComponent('Inquiry from ' + clientName)}&body=${encodeURIComponent(clientMessage)}`;
+            sysMsg.textContent = '[!] Fallback: Opening encrypted mail link...';
             sysMsg.style.color = '#ffaa00';
         } finally {
             submitBtn.disabled = false;
@@ -162,4 +272,4 @@ if (contactForm) {
     });
 }
 
-console.log('Nada-OS system initialized successfully... Domain: nadaelmasry.me');
+console.log('Nada-OS v2.6 initialized successfully... Domain: nadaelmasry.me');

@@ -68,7 +68,7 @@
             </p>
             <div class="hero-metrics">
                 <div class="metric-item">
-                    <span class="metric-num">90%+</span>
+                    <span class="metric-num counter" data-target="90" data-suffix="%+">0%+</span>
                     <span class="metric-label">Manual Effort Eliminated</span>
                 </div>
                 <div class="metric-item">
@@ -76,11 +76,11 @@
                     <span class="metric-label">University Innovation Award</span>
                 </div>
                 <div class="metric-item">
-                    <span class="metric-num">500+</span>
+                    <span class="metric-num counter" data-target="500" data-suffix="+">0+</span>
                     <span class="metric-label">Secondary Students Mentored</span>
                 </div>
                 <div class="metric-item">
-                    <span class="metric-num">&lt;500ms</span>
+                    <span class="metric-num counter" data-target="500" data-prefix="<" data-suffix="ms">&lt;0ms</span>
                     <span class="metric-label">Grounded AI Latency</span>
                 </div>
             </div>
@@ -471,12 +471,25 @@
         </div>
         <div class="terminal-container">
             <div class="terminal-header">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-                <span class="terminal-title">bash - nada@nadaelmasry.me:~</span>
+                <div class="terminal-dots">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <span class="terminal-title">bash - nada@nadaelmasry.me:~ (interactive)</span>
+                <span class="terminal-badge-live">● SYSTEM ACTIVE</span>
             </div>
             <div class="terminal-body">
+                <!-- Interactive Command Chips for Live Diagnostics -->
+                <div class="terminal-quick-cmds">
+                    <span class="quick-cmd-label">// Run quick diagnostic:</span>
+                    <button type="button" class="term-chip" data-cmd="system_info">./system_info.sh</button>
+                    <button type="button" class="term-chip" data-cmd="awards">./view_awards.sh</button>
+                    <button type="button" class="term-chip" data-cmd="curriculum">./curriculum.sh</button>
+                    <button type="button" class="term-chip" data-cmd="clear">./clear.sh</button>
+                </div>
+                <div id="term-output" class="term-console-output"></div>
+
                 <p class="sys-msg">// Ready to discuss your project scope, architecture, or workflow automation.</p>
                 <form id="contact-form">
                     <!-- Anti-bot honeypot field -->

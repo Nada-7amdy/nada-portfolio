@@ -512,6 +512,11 @@ section {
     align-items: center;
 }
 
+.terminal-dots {
+    display: flex;
+    align-items: center;
+}
+
 .dot {
     width: 12px;
     height: 12px;
@@ -524,15 +529,112 @@ section {
 .dot.green { background: #10b981; }
 
 .terminal-title {
-    margin-left: 12px;
+    margin-left: 8px;
     font-family: var(--font-mono);
-    color: #64748b;
+    color: #94a3b8;
     font-size: 0.85rem;
+}
+
+.terminal-badge-live {
+    margin-left: auto;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--primary);
+    background: rgba(0, 255, 204, 0.1);
+    border: 1px solid rgba(0, 255, 204, 0.3);
+    padding: 2px 8px;
+    border-radius: 12px;
+    letter-spacing: 0.5px;
+    animation: liveBadgeGlow 2.5s infinite;
+}
+
+@keyframes liveBadgeGlow {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; box-shadow: 0 0 10px rgba(0, 255, 204, 0.4); }
 }
 
 .terminal-body {
     padding: 2rem;
     font-family: var(--font-mono);
+}
+
+/* --- Terminal Quick Chips & Interactive Output --- */
+.terminal-quick-cmds {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed var(--glass-border);
+}
+
+.quick-cmd-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+}
+
+.term-chip {
+    background: rgba(14, 18, 27, 0.9);
+    border: 1px solid var(--glass-border);
+    color: var(--primary);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.term-chip:hover {
+    background: rgba(0, 255, 204, 0.12);
+    border-color: var(--primary);
+    transform: translateY(-1px);
+    box-shadow: 0 0 8px rgba(0, 255, 204, 0.25);
+}
+
+.term-chip:active {
+    transform: translateY(0);
+}
+
+.term-console-output {
+    margin-bottom: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    display: none;
+    background: rgba(0, 0, 0, 0.5);
+    border-left: 2px solid var(--primary);
+    padding: 1rem;
+    border-radius: 0 6px 6px 0;
+}
+
+.term-console-output.active {
+    display: block;
+    animation: fadeInConsole 0.3s ease;
+}
+
+@keyframes fadeInConsole {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.term-line-cmd {
+    color: var(--primary);
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+.term-line-res {
+    color: #e2e8f0;
+    margin-left: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.term-line-res.highlight {
+    color: var(--accent-gold);
+    font-weight: 600;
 }
 
 .sys-msg {
