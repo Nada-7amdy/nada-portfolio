@@ -479,6 +479,8 @@
             <div class="terminal-body">
                 <p class="sys-msg">// Ready to discuss your project scope, architecture, or workflow automation.</p>
                 <form id="contact-form">
+                    <!-- Anti-bot honeypot field -->
+                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                     <div class="input-line">
                         <span class="prompt">client@origin:~$</span>
                         <input type="text" id="client-name" placeholder="Your Name / Organization" required>
